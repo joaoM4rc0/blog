@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="div_login">
+<h1>Faça seu login</h1>
+    <form th:action="@{/auth/login}" id="login-form" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@.com" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="senha" required>
+
+        <input type="submit" value="Entrar">
+    </form>
+    <div class="cadastrar_usuario">
+        <a th:href="cadastro">cadastrar</a>
+    </div>
+    <script th:src="@{/js/main.js}"></script>
+</div>
+</body>
+</html>

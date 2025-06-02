@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog</title>
+    <link rel="stylesheet" th:href="@{/css/blog.css}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="logo">blog</h1>
+        <nav>
+            <a href="/" class="menu-item">Inicio</a>
+            <a href="/" class="menu-item">Categorias</a>
+            <a href="/" class="menu-item">Sobre</a>
+            <a href="/" class="menu-item">contato</a>
+        </nav>
+    </div>
+</header>
+<section class="destaque">
+    <div class="container">
+        <h1>post em destaque: </h1>
+        <h2 th:text="${postsDestaque.title}"></h2>
+        <p th:text="${#strings.abbreviate(postsDestaque.conteudo, 200)}">resumo do conteudo do post em destaque</p>
+        <a th:href="@{'/post/' + ${postsDestaque.id}}" class="btn">leia mais</a>
+    </div>
+</section>
+<main class="container">
+    <div class="post-list">
+        <article>
+            vai ser onde vc vai fazer seu post
+        </article>
+    </div>
+</main>
+<footer>
+    <div class="container">
+        <p>meu blog</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0.40
+    container_name: blog_data
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: blog_data
+    volumes:
+      - blog_data:/var/lib/mysql
+      - /usr/share/zoneinfo:/usr/share/zoneinfo:ro
+    ports:
+      - "3305:3306"
+    networks:
+      - blog_net
+
+volumes:
+  blog_data:
+
+networks:
+  blog_net:
